@@ -1,0 +1,34 @@
+tabela: usuario
+- id
+- nome
+- sobrenome
+- CPF/RG
+- email
+- senha
+
+tabela:telefone
+- id
+- DDD
+- Codigo do pais
+- numero
+
+tabela: endereço
+- id
+- nome da rua
+- bairro
+- numero da casa
+- cidade
+- estado
+- país
+- CEP
+- complemento
+
+tabela: usuario_endereço
+- usuario_id (referencia ao ID da tabela 'usuarios')
+- endereço_id (referenciaao ID da tebela 'endereço')
+
+
+tabela: usuario_telefone
+- usuario_id (refencia ao ID da tabela 'usuarios')
+- telefone_id (refenncia ao ID da tabela 'telefone')
+

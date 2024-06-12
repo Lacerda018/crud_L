@@ -1,3 +1,4 @@
+# CRUD de Usuários com Laravel 11
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -7,60 +8,119 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Descrição
+Este projeto é uma aplicação web para a gestão de usuários utilizando o framework Laravel 11. Ele permite realizar operações CRUD (Create, Read, Update, Delete) em usuários. A aplicação inclui autenticação de usuários e validação de formulários.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Requisitos
+PHP 8.1 ou superior
+Composer
+Banco de dados MySQL ou SQLite
+Node.js e NPM (opcional, para compilar ativos front-end)
+Instalação
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Clone o repositório
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<ul>
+    <li>git clone https://github.com/seu-usuario/seu-repositorio.git</li>
+    <li>cd seu-repositorio</li>
+</ul>
+        
+    
+### Instale as dependências do PHP com o Composer
 
-## Learning Laravel
+<ul>
+    <li>composer install</li>
+</ul>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Crie um arquivo .env a partir do exemplo
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<ul>
+    <li>cp .env.example .env</li>
+</ul>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Gere a chave da aplicação
 
-## Laravel Sponsors
+<ul>
+    <li>php artisan key:generate</li>
+</ul>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Configure o arquivo .env com suas credenciais de banco de dados
 
-### Premium Partners
+### Abra o arquivo .env e configure as seguintes variáveis:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+<p>DB_CONNECTION=mysql
+<p>DB_HOST=127.0.0.1
+<p>DB_PORT=3306
+<p>DB_DATABASE=nome_do_banco_de_dados
+<p>DB_USERNAME=seu_usuario
+<p>DB_PASSWORD=sua_senha
 
-## Contributing
+### Execute as migrações para criar as tabelas no banco de dados
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<ul>
+    <li>php artisan migrate</li>
+</ul>
 
-## Code of Conduct
+### Instale as dependências do Node.js e compile os ativos (opcional)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<ul>
+    <li>npm install</li>
+    <li>npm run dev</li>
+</ul>
 
-## Security Vulnerabilities
+## Uso
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Inicie o servidor de desenvolvimento
 
-## License
+<ul>
+    <li>php artisan serve</li>
+</ul>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Acesse a aplicação no navegador
+
+Abra o navegador e vá para http://localhost:8000.
+
+## Registro e autenticação
+
+<ul>
+    <li>Registre-se como um novo usuário.</li>
+    <li>Faça login com suas credenciais.</li>
+</ul>
+
+## Gestão de usuários
+
+<ul>
+    <li>Após o login, você pode criar, visualizar, editar e excluir usuários.</li>
+    <li>Acesse o painel de usuários através do menu de navegação.</li>
+</ul>
+
+### Estrutura de Diretórios
+
+<ul>
+    <li>app/Models - Contém os modelos Eloquent (User.php).</li>
+    <li>app/Http/Controllers - Contém os controladores (UserController.php).</li>
+    <li>resources/views - Contém as views Blade (usuários, autenticação, etc).</li>
+    <li>routes/web.php - Contém as rotas web.</li>
+    <li>database/migrations - Contém as migrações de banco de dados.</li>
+</ul>
+
+## Funcionalidades
+Criação de Usuários: Permite a criação de novos usuários com nome, email e senha.
+
+### Leitura de Usuários: 
+
+<ul>
+    <li>Exibe uma lista de usuários cadastrados.</li>
+    <li>Atualização de Usuários: Permite a edição das informações dos usuários.</li>
+    <li>Exclusão de Usuários: Permite a exclusão de usuários cadastrados.</li>
+    <li>Autenticação: Sistema de login e registro com validação de dados.</li>
+</ul>
+
+## Contribuição
+<p>Se você deseja contribuir para este projeto, por favor, siga as diretrizes abaixo:
+
+<p>Faça um fork do projeto.
+<p>Crie um branch para sua feature (git checkout -b feature/nova-feature).
+<p>Commit suas mudanças (git commit -am 'Adiciona nova feature').
+<p>Faça um push para o branch (git push origin feature/nova-feature).
+<p>Crie um Pull Request.
